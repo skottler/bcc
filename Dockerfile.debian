@@ -9,6 +9,8 @@ RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv 15CF4D18AF4F7421 &
     mkdir -p /usr/share/llvm-3.8 && \
     ln -s /usr/lib/llvm-3.8/share/llvm/cmake /usr/share/llvm-3.8/cmake
 
+COPY ./ /root/bcc
+
 WORKDIR /root/bcc
 
 RUN ./scripts/build-deb.sh
