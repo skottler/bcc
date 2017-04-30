@@ -13,4 +13,4 @@ COPY ./ /root/bcc
 
 WORKDIR /root/bcc
 
-RUN ./scripts/build-deb.sh
+ENTRYPOINT ./scripts/build-deb.sh
