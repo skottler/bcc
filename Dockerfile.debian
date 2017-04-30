@@ -2,7 +2,8 @@ FROM debian:jessie
 
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv 15CF4D18AF4F7421 && \
     echo "deb http://llvm.org/apt/jessie/ llvm-toolchain-jessie-3.8 main" > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb http://httpredir.debian.org/debian jessie main contrib non-free" > /etc/apt/sources.list.d/non-free.list && \
+    echo "deb http://deb.debian.org/debian/ jessie main contrib non-free" > /etc/apt/sources.list.d/non-free.list && \
+    echo "deb http://deb.debian.org/debian/ jessie-backports main" > /etc/apt/sources.list.d/backprots.list" && \
     apt-get update && \
     apt-get install -y --no-install-recommends sudo build-essential fakeroot bison cmake debhelper devscripts flex git libedit-dev python zlib1g-dev libllvm3.8 llvm-3.8-dev libclang-3.8-dev libelf-dev luajit libluajit-5.1-dev clang-format-3.8 python-netaddr python-pyroute2 arping iperf ethtool netperf && \
     mkdir -p /usr/share/llvm-3.8 && \
